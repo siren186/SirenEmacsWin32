@@ -1,0 +1,15 @@
+1.下载我提供的windows_emacs_w3m.rar文件，并进行解压。
+2.将解压目录中的w3m目录放到你的emacs应用程序的目录中(我的目录路径为D:/emacs-23.4/)。
+3.将w3m-lisp目录放到emacs系统默认的.emacs.d目录中（win7平台的.emacs.d目录所在路径为C:\Users\Administrator\AppData\Roaming\.emacs.d）。
+4.编辑C:\Users\Administrator\AppData\Roaming\.emacs文件，在文件的后面添加如下内容：
+
+点击(此处)折叠或打开
+
+    ;;w3m配置项（用于上网）
+    (add-to-list 'load-path "C:/Users/Administrator/AppData/Roaming/.emacs.d/w3m-lisp") ;;w3m所需要的lisp文件，所在路径
+    (add-to-list 'exec-path "D:/emacs-23.4/w3m") ;;指定w3m可执行程序，所在的执行路径
+    (require 'w3m-load)
+    (setq w3m-use-favicon nil)
+    (setq w3m-command-arguments '("-cookie" "-F"))
+    (setq w3m-use-cookies t)
+    (setq w3m-home-page "http://www.baidu.com")
